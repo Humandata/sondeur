@@ -15,23 +15,31 @@
 
 			<div class="collapse navbar-collapse" id="navbarColor01">
 				<ul class="navbar-nav mr-auto">
-			 		<li class="nav-item {% if currentMenu == 'accueil' %}active{% endif%}">
+			 		<li class="nav-item {% if currentMenu is defined and currentMenu == 'accueil' %}active{% endif%}">
 			    		<a class="nav-link " href="{{ path('accueil') }}">Accueil <span class="sr-only">(current)</span></a>
 			  		</li>
-			  		<li class="nav-item {% if currentMenu == 'presentation' %}active{% endif%}">
+			  		<li class="nav-item {% if currentMenu is defined and currentMenu == 'presentation' %}active{% endif%}">
 			    		<a class="nav-link" href="{{ path('presentation') }}">Présentations</a>
 			  		</li>
-			  		<li class="nav-item {% if currentMenu == 'dossier' %}active{% endif%}">
+			  		<li class="nav-item {% if currentMenu is defined and currentMenu == 'dossier' %}active{% endif%}">
 			    		<a class="nav-link" href="{{ path('dossier') }}">Dossier</a>
 			  		</li>
-			  		<li class="nav-item {% if currentMenu == 'apropos' %}active{% endif%}">
+			  		<li class="nav-item {% if currentMenu is defined and currentMenu == 'apropos' %}active{% endif%}">
 			    		<a class="nav-link" href="{{ path('apropos') }}">À propos</a>
 			  		</li>
 				</ul>
 				<form class="form-inline my-2 my-lg-0">
-			  		<input class="form-control mr-sm-2" type="text" placeholder="Search">
-			  		<button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-			  		<button class="btn btn-warning my-2 my-sm-0" type="submit">Connexion</button>
+					<ul>
+			  			<input class="form-control mr-sm-2" type="text" placeholder="Recherche">
+			  			<button class="btn btn-secondary my-2 my-sm-0" role="button">Recherche</button>
+			  		</ul>
+			  		<ul>
+			  			{% if not app.user %}
+			  				<a href="{{ path('security_login') }}" class="btn btn-warning my-2 my-sm-0" role="button">Connexion</a>
+			  			{% else %}
+			  				<a href="{{ path('security_logout') }}" class="btn btn-warning my-2 my-sm-0" role="button">Déconnexion</a>
+			  			{% endif %}
+			  		</ul>
 				</form>
 			</div>
 		</nav>
