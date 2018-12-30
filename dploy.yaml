@@ -1,0 +1,7 @@
+dev:
+    host: "ftp.humandata.info"
+    user: relaxmax
+    pass: muse14O2switch14&
+    check: true
+    path:
+        remote: "/home/relaxmax/sondeur.humandata.info"
