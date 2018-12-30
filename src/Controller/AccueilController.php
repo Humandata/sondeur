@@ -14,6 +14,7 @@ class AccueilController extends AbstractController
     {
         return $this->render('accueil/index.html.twig', [
             'controller_name' => 'AccueilController',
+            'currentMenu'     => 'accueil',
         ]);
     }
 
@@ -24,6 +25,7 @@ class AccueilController extends AbstractController
     {
         return $this->render('accueil/home.html.twig', [
             'controller_name' => 'AccueilController',
+            'currentMenu'     => 'accueil',
         ]);
     }
 
@@ -34,6 +36,7 @@ class AccueilController extends AbstractController
     {
         return $this->render('accueil/apropos.html.twig', [
             'controller_name' => 'À propos',
+            'currentMenu'     => 'apropos',
         ]);
     }
 
@@ -44,6 +47,7 @@ class AccueilController extends AbstractController
     {
         return $this->render('accueil/presentation.html.twig', [
             'controller_name' => 'Présentations',
+            'currentMenu'     => 'presentation',
         ]);
     }
 
@@ -54,6 +58,7 @@ class AccueilController extends AbstractController
     {
         return $this->render('accueil/dossier.html.twig', [
             'controller_name' => 'Dossier',
+            'currentMenu'     => 'dossier',
         ]);
     }    
 }
